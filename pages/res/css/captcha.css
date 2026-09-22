@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Google Sans", Roboto, Arial, sans-serif;
+        }
+
+        :root {
+            --bg-color: rgb(240 244 249 / 1);
+            --card-bg: #fff;
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --border-color: #dadce0;
+            --hover-bg: rgba(95, 99, 104, 0.08);
+            --error-color: #d93025;
+            --button-bg: #0b57d0;
+            --button-hover: #1a73e8;
+            --button-text: #fff;
+        }
+
+        body {
+            background: var(--bg-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 1060px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .signin-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 35px 40px 36px;
+            display: flex;
+            justify-content: space-between;
+            gap: 100px;
+            height: 402px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .signin-left {
+            flex: 1;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signin-right {
+            flex: 1;
+            max-width: 450px;
+            padding-top: 40px;
+        }
+
+        .logo-container {
+            margin-bottom: 32px;
+        }
+
+        .google-logo {
+            width: 48px;
+            height: 48px;
+            display: block;
+        }
+
+        h1 {
+            color: var(--text-primary);
+            font-size: 44px;
+            font-weight: 400;
+            line-height: 1.3333;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .subtitle {
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.1px;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .verification-container {
+            text-align: center;
+            padding: 48px 24px;
+        }
+
+        .verification-title {
+            color: var(--text-primary);
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        .verification-text {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .noscript-warning {
+            color: #d93025;
+            font-size: 16px;
+            margin: 24px 0;
+        }
+
+        .error-message {
+            color: #d93025;
+            font-size: 12px;
+            margin: 8px 0;
+            display: none;
+        }
+
+        .g-recaptcha {
+            display: inline-block;
+            margin-bottom: 60px;
+        }
+
+        .attribution {
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .ray-id {
+            color: var(--text-secondary);
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .ray-id code {
+            font-family: monospace;
+            background: var(--bg-color);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .language-select {
+            color: var(--text-primary);
+            font-size: 12px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background: transparent;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 12px;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 945px) {
+            .container {
+                width: 100%;
+                max-width: 480px;
+            }
+
+            .signin-card {
+                flex-direction: column;
+                gap: 24px;
+                height: auto;
+                padding: 48px;
+            }
+
+            .signin-left {
+                max-width: 100%;
+            }
+
+            .signin-right {
+                max-width: 100%;
+                padding-top: 0;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+
+            .logo-container {
+                margin-bottom: 16px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background: var(--card-bg);
+                align-items: flex-start;
+            }
+
+            .container {
+                width: 100%;
+                padding: 0 24px;
+            }
+
+            .signin-card {
+                padding: 20px 0;
+                height: auto;
+                flex-direction: column;
+                gap: 24px;
+                border-radius: 0;
+            }
+
+            .footer {
+                margin-top: 32px;
+                padding-bottom: 8px;
+            }
+        }

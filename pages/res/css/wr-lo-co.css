@@ -1,0 +1,11 @@
+.signin-card {
+    height: 410px !important;
+}
+
+	@media (max-width: 945px) {
+
+		.signin-card {
+			height: 550px !important;
+		}
+
+	}

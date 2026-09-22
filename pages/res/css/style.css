@@ -1,0 +1,549 @@
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('res/fonts/GoogleSans-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+:root {
+    --bg-color: rgb(240 244 249 / 1);
+    --card-bg: #fff;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --hover-bg: rgba(95, 99, 104, 0.08);
+    --error-color: #d93025;
+    --button-bg: #0b57d0;
+    --button-hover: #1a73e8;
+    --button-text: #fff;
+}
+
+body {
+    background: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 1060px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.signin-card {
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 35px 40px 36px;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    height: 402px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation styles */
+.signin-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: #0b57d0;
+    animation: none;
+}
+
+.signin-card.submitting::before {
+    animation: loading 1.2s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.signin-left {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-right {
+    flex: 1;
+    max-width: 450px;
+    padding-top: 82px;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.google-logo {
+    width: 48px;
+    height: 48px;
+    display: block;
+}
+
+h1 {
+    color: var(--text-primary);
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.3333;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.subtitle {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.user-email {
+    color: var(--text-primary);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 0 4px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.user-email:hover {
+    background: var(--hover-bg);
+}
+
+.user-icon {
+    color: var(--text-secondary);
+    min-width: 20px;
+}
+
+.dropdown-icon {
+    color: var(--text-secondary);
+    min-width: 18px;
+    margin-left: 4px;
+}
+
+.showed-otp {
+    text-align: center;
+    font-size: 36px;
+}
+
+.otp-info {
+    margin-bottom: 24px;
+}
+
+.otp-info h2 {
+    color: var(--text-primary);
+    font-weight: 400;
+    line-height: 1.3333;
+    margin-bottom: 12px;
+}
+
+.otp-info p {
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.input-container.error input {
+    border-color: var(--error-color);
+}
+
+.input-container.error .input-label {
+    color: var(--error-color);
+}
+
+input {
+    width: 100%;
+    height: 56px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 13px 15px;
+    font-size: 16px;
+    color: var(--text-primary);
+    outline: none;
+    background: transparent;
+}
+
+.input-label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 16px;
+    transition: all 0.2s;
+    background: var(--card-bg);
+    padding: 0 4px;
+    pointer-events: none;
+}
+
+input:focus + .input-label,
+input:not(:placeholder-shown) + .input-label {
+    top: 0;
+    font-size: 12px;
+    color: #1a73e8;
+}
+
+.input-container.error input:focus + .input-label,
+.input-container.error input:not(:placeholder-shown) + .input-label {
+    color: var(--error-color);
+}
+
+input:focus {
+    border-color: #1a73e8;
+    border-width: 2px;
+    padding: 12px 14px;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.error-icon {
+    fill: var(--error-color);
+}
+
+.show-password {
+    margin: 8px 0;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.checkbox-label {
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.forgot-email,
+.forgot-password {
+    width: 100%;
+    text-align: left;
+    margin: 8px 0 32px;
+}
+
+.forgot-email button,
+.forgot-password button {
+    color: #1a73e8;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.guest-mode {
+    width: 100%;
+    text-align: left;
+    margin-bottom: auto;
+}
+
+.guest-mode p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.guest-mode a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.button-group {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 48px;
+    gap: 24px;
+}
+
+.create-account,
+.text-button {
+    color: #1a73e8;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.next-button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    padding: 0 24px;
+    height: 36px;
+    min-width: 77px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.next-button:hover {
+    background: var(--button-hover);
+    box-shadow: 0 1px 2px 0 rgba(66,133,244,0.3),
+                0 1px 3px 1px rgba(66,133,244,0.15);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.language-select {
+    color: var(--text-primary);
+    font-size: 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 945px) {
+    .container {
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .signin-card {
+        flex-direction: column;
+        gap: 24px;
+        height: auto;
+        padding: 48px;
+    }
+
+    .signin-left {
+        max-width: 100%;
+    }
+
+    .signin-right {
+        max-width: 100%;
+        padding-top: 0;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .logo-container {
+        margin-bottom: 16px;
+    }
+
+    .button-group {
+        margin-top: 32px;
+        justify-content: space-between;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background: var(--card-bg);
+        align-items: flex-start;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .signin-card {
+        padding: 20px 0;
+        height: auto;
+        flex-direction: column;
+        gap: 24px;
+        border-radius: 0;
+        flex: 1;
+    }
+
+    .signin-left {
+        max-width: 100%;
+        flex: unset;
+    }
+
+    .signin-right {
+        max-width: 100%;
+        padding-top: 0;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .logo-container {
+        margin-bottom: 16px;
+    }
+
+    .button-group {
+        margin-top: 32px;
+        justify-content: space-between;
+    }
+
+    .footer {
+        margin-top: auto;
+        padding-bottom: 8px;
+    }
+}

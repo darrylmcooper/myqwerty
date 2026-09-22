@@ -1,0 +1,26 @@
+.signin-card {
+            height: 394px !important;
+        }
+		
+		.signin-right {
+			padding-top: 120px !important;
+		}
+		
+		.button-group {
+			margin-top: 68px;
+		}
+		
+	@media (max-width: 945px) {
+		.signin-right {
+			padding-top: 0 !important;
+		}
+		
+		.button-group {
+			margin-top: 32px;
+		}
+		
+		.signin-card {
+			height: 450px !important;
+		}
+
+	}
